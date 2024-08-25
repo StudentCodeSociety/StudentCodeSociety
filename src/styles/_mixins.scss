@@ -1,6 +1,947 @@
-@mixin flex-center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+@import "variables";
+// Mixin for mobile
+@mixin mobile {
+  @media (max-width: #{$breakpoint-mobile}) {
+    @content;
   }
-  
+}
+
+// Mixin for tablet
+@mixin tablet {
+  @media (min-width: #{$breakpoint-tablet}) and (max-width: #{$breakpoint-desktop - 1}) {
+    @content;
+  }
+}
+
+@mixin main-container(){
+  padding: $padding-base;
+  width: 100%;
+}
+
+@mixin mobile-tablet {
+  @include mobile {
+    @content;
+  }
+  @include tablet {
+    @content;
+  }
+}
+// Mixin for desktop
+@mixin desktop {
+  @media (min-width: #{$breakpoint-desktop}) {
+    @content;
+  }
+}
+
+// Mixin for text styles with default values
+@mixin text-styles(
+  $color: $color-black,
+  $font-size: $text-size-large,
+  $line-height: 1.5,
+  $font-weight: normal
+) {
+  color: $color;
+  font-size: $font-size;
+  line-height: $line-height;
+  font-weight: $font-weight;
+}
+// Primary color with small font size
+@mixin text-primary-small() {
+  @include text-styles(
+    $color-primary,
+    $text-size-small,
+    $default-line-height,
+    $font-weight-regular
+  );
+}
+
+// Primary color with large font size
+@mixin text-primary-large() {
+  @include text-styles(
+    $color-primary,
+    $text-size-large,
+    $default-line-height,
+    $font-weight-regular
+  );
+}
+
+// Primary color with larger font size
+@mixin text-primary-larger() {
+  @include text-styles(
+    $color-primary,
+    $text-size-larger,
+    $default-line-height,
+    $font-weight-regular
+  );
+}
+
+// Primary color with xxxl font size
+@mixin text-primary-xxxl() {
+  @include text-styles(
+    $color-primary,
+    $text-size-xxxl,
+    $default-line-height,
+    $font-weight-regular
+  );
+}
+
+// Primary color with thin font weight
+@mixin text-primary-thin($font-size: $text-size-large) {
+  @include text-styles(
+    $color-primary,
+    $font-size,
+    $default-line-height,
+    $font-weight-thin
+  );
+}
+
+// Primary color with semi-bold font weight
+@mixin text-primary-semi-bold($font-size: $text-size-large) {
+  @include text-styles(
+    $color-primary,
+    $font-size,
+    $default-line-height,
+    $font-weight-semi-bold
+  );
+}
+
+// Primary color with bold font weight
+@mixin text-primary-bold($font-size: $text-size-large) {
+  @include text-styles(
+    $color-primary,
+    $font-size,
+    $default-line-height,
+    $font-weight-bold
+  );
+}
+
+// Black color with small font size
+@mixin text-black-small() {
+  @include text-styles(
+    $color-black,
+    $text-size-small,
+    $default-line-height,
+    $font-weight-regular
+  );
+}
+
+// Black color with large font size
+@mixin text-black-large() {
+  @include text-styles(
+    $color-black,
+    $text-size-large,
+    $default-line-height,
+    $font-weight-regular
+  );
+}
+
+// Black color with larger font size
+@mixin text-black-larger() {
+  @include text-styles(
+    $color-black,
+    $text-size-larger,
+    $default-line-height,
+    $font-weight-regular
+  );
+}
+
+// Black color with xxxl font size
+@mixin text-black-xxxl() {
+  @include text-styles(
+    $color-black,
+    $text-size-xxxl,
+    $default-line-height,
+    $font-weight-regular
+  );
+}
+
+// Black color with thin font weight
+@mixin text-black-thin($font-size: $text-size-large) {
+  @include text-styles(
+    $color-black,
+    $font-size,
+    $default-line-height,
+    $font-weight-thin
+  );
+}
+
+// Black color with semi-bold font weight
+@mixin text-black-semi-bold($font-size: $text-size-large) {
+  @include text-styles(
+    $color-black,
+    $font-size,
+    $default-line-height,
+    $font-weight-semi-bold
+  );
+}
+
+// Black color with bold font weight
+@mixin text-black-bold($font-size: $text-size-large) {
+  @include text-styles(
+    $color-black,
+    $font-size,
+    $default-line-height,
+    $font-weight-bold
+  );
+}
+
+// White color with small font size
+@mixin text-white-small() {
+  @include text-styles(
+    $color-white,
+    $text-size-small,
+    $default-line-height,
+    $font-weight-regular
+  );
+}
+
+// White color with large font size
+@mixin text-white-large() {
+  @include text-styles(
+    $color-white,
+    $text-size-large,
+    $default-line-height,
+    $font-weight-regular
+  );
+}
+
+// White color with larger font size
+@mixin text-white-larger() {
+  @include text-styles(
+    $color-white,
+    $text-size-larger,
+    $default-line-height,
+    $font-weight-regular
+  );
+}
+
+// White color with xxxl font size
+@mixin text-white-xxxl() {
+  @include text-styles(
+    $color-white,
+    $text-size-xxxl,
+    $default-line-height,
+    $font-weight-regular
+  );
+}
+
+// White color with thin font weight
+@mixin text-white-thin($font-size: $text-size-large) {
+  @include text-styles(
+    $color-white,
+    $font-size,
+    $default-line-height,
+    $font-weight-thin
+  );
+}
+
+// White color with semi-bold font weight
+@mixin text-white-semi-bold($font-size: $text-size-large) {
+  @include text-styles(
+    $color-white,
+    $font-size,
+    $default-line-height,
+    $font-weight-semi-bold
+  );
+}
+
+// White color with bold font weight
+@mixin text-white-bold($font-size: $text-size-large) {
+  @include text-styles(
+    $color-white,
+    $font-size,
+    $default-line-height,
+    $font-weight-bold
+  );
+}
+
+// Black color with small font size
+@mixin text-grey-small() {
+  @include text-styles(
+    $color-grey,
+    $text-size-small,
+    $default-line-height,
+    $font-weight-regular
+  );
+}
+
+// Black color with large font size
+@mixin text-grey-large() {
+  @include text-styles(
+    $color-grey,
+    $text-size-large,
+    $default-line-height,
+    $font-weight-regular
+  );
+}
+
+// Black color with larger font size
+@mixin text-grey-larger() {
+  @include text-styles(
+    $color-grey,
+    $text-size-larger,
+    $default-line-height,
+    $font-weight-regular
+  );
+}
+
+// Black color with xxxl font size
+@mixin text-grey-xxxl() {
+  @include text-styles(
+    $color-grey,
+    $text-size-xxxl,
+    $default-line-height,
+    $font-weight-regular
+  );
+}
+
+// Black color with thin font weight
+@mixin text-grey-thin($font-size: $text-size-large) {
+  @include text-styles(
+    $color-grey,
+    $font-size,
+    $default-line-height,
+    $font-weight-thin
+  );
+}
+
+// Black color with semi-bold font weight
+@mixin text-grey-semi-bold($font-size: $text-size-large) {
+  @include text-styles(
+    $color-grey,
+    $font-size,
+    $default-line-height,
+    $font-weight-semi-bold
+  );
+}
+
+// Black color with bold font weight
+@mixin text-grey-bold($font-size: $text-size-large) {
+  @include text-styles(
+    $color-grey,
+    $font-size,
+    $default-line-height,
+    $font-weight-bold
+  );
+}
+
+// Border Mixins
+@mixin border($borderColor: $border-color, $width: 1px, $important: false) {
+  border: $width solid $borderColor;
+  @if $important {
+    border: $width solid $borderColor !important;
+  }
+}
+
+@mixin border-bottom($borderColor: $border-color, $width: 1px) {
+  border-bottom: $width solid $borderColor;
+}
+
+@mixin border-top($borderColor: $border-color, $width: 1px) {
+  border-top: $width solid $borderColor;
+}
+
+@mixin border-right($borderColor: $border-color, $width: 1px) {
+  border-right: $width solid $borderColor;
+}
+
+@mixin border-left($borderColor: $border-color, $width: 1px) {
+  border-left: $width solid $borderColor;
+}
+// Position Mixins
+
+@mixin position($top: 0, $bottom: auto, $left: 0, $right: 0) {
+  position: absolute;
+  top: $top;
+  bottom: $bottom;
+  right: $right;
+  left: $left;
+}
+
+@mixin position-top() {
+  position: absolute;
+  top: 0;
+  bottom: auto;
+  right: 0;
+  left: 0;
+}
+
+@mixin position-bottom() {
+  position: absolute;
+  top: auto;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+@mixin position-right() {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: auto;
+}
+
+@mixin position-left() {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: auto;
+  left: 0;
+}
+
+// Flexbox Mixins
+@mixin flex() {
+  display: flex;
+}
+
+@mixin large-box-shadow() {
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 0 10px $box-shadow-color;;
+}
+
+
+@mixin box-shadow() {
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 0 6px $box-shadow-color;;
+}
+
+@mixin flex-center() {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-end() {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+@mixin flex-align-item-center() {
+  display: flex;
+  align-items: center;
+}
+@mixin flex-justify-center() {
+  display: flex;
+  justify-content: center;
+}
+
+@mixin flex-justify-start() {
+  display: flex;
+  justify-content: flex-start;
+}
+
+@mixin flex-justify-end() {
+  display: flex;
+  justify-content: flex-end;
+}
+
+@mixin flex-justify-space-between() {
+  display: flex;
+  justify-content: space-between;
+}
+
+@mixin flex-align-center() {
+  display: flex;
+  align-items: center;
+}
+
+@mixin flex-align-end() {
+  display: flex;
+  align-items: flex-end;
+}
+
+@mixin flex-justify-space-around() {
+  display: flex;
+  justify-content: space-around;
+}
+
+// mixin for the slide-in-from-top animation
+@mixin slide-in-from-top($duration: 0.35s, $easing: ease-out) {
+  animation: slide-in-from-top $duration $easing;
+ 
+  @keyframes slide-in-from-top {
+    0% {
+      transform: translateY(-15%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+}@import "variables";
+// Mixin for mobile
+@mixin mobile {
+  @media (max-width: #{$breakpoint-mobile}) {
+    @content;
+  }
+}
+
+// Mixin for tablet
+@mixin tablet {
+  @media (min-width: #{$breakpoint-tablet}) and (max-width: #{$breakpoint-desktop - 1}) {
+    @content;
+  }
+}
+
+@mixin main-container(){
+  padding: $padding-base;
+  width: 100%;
+}
+
+@mixin mobile-tablet {
+  @include mobile {
+    @content;
+  }
+  @include tablet {
+    @content;
+  }
+}
+// Mixin for desktop
+@mixin desktop {
+  @media (min-width: #{$breakpoint-desktop}) {
+    @content;
+  }
+}
+
+// Mixin for text styles with default values
+@mixin text-styles(
+  $color: $color-black,
+  $font-size: $text-size-large,
+  $line-height: 1.5,
+  $font-weight: normal
+) {
+  color: $color;
+  font-size: $font-size;
+  line-height: $line-height;
+  font-weight: $font-weight;
+}
+// Primary color with small font size
+@mixin text-primary-small() {
+  @include text-styles(
+    $color-primary,
+    $text-size-small,
+    $default-line-height,
+    $font-weight-regular
+  );
+}
+
+// Primary color with large font size
+@mixin text-primary-large() {
+  @include text-styles(
+    $color-primary,
+    $text-size-large,
+    $default-line-height,
+    $font-weight-regular
+  );
+}
+
+// Primary color with larger font size
+@mixin text-primary-larger() {
+  @include text-styles(
+    $color-primary,
+    $text-size-larger,
+    $default-line-height,
+    $font-weight-regular
+  );
+}
+
+// Primary color with xxxl font size
+@mixin text-primary-xxxl() {
+  @include text-styles(
+    $color-primary,
+    $text-size-xxxl,
+    $default-line-height,
+    $font-weight-regular
+  );
+}
+
+// Primary color with thin font weight
+@mixin text-primary-thin($font-size: $text-size-large) {
+  @include text-styles(
+    $color-primary,
+    $font-size,
+    $default-line-height,
+    $font-weight-thin
+  );
+}
+
+// Primary color with semi-bold font weight
+@mixin text-primary-semi-bold($font-size: $text-size-large) {
+  @include text-styles(
+    $color-primary,
+    $font-size,
+    $default-line-height,
+    $font-weight-semi-bold
+  );
+}
+
+// Primary color with bold font weight
+@mixin text-primary-bold($font-size: $text-size-large) {
+  @include text-styles(
+    $color-primary,
+    $font-size,
+    $default-line-height,
+    $font-weight-bold
+  );
+}
+
+// Black color with small font size
+@mixin text-black-small() {
+  @include text-styles(
+    $color-black,
+    $text-size-small,
+    $default-line-height,
+    $font-weight-regular
+  );
+}
+
+// Black color with large font size
+@mixin text-black-large() {
+  @include text-styles(
+    $color-black,
+    $text-size-large,
+    $default-line-height,
+    $font-weight-regular
+  );
+}
+
+// Black color with larger font size
+@mixin text-black-larger() {
+  @include text-styles(
+    $color-black,
+    $text-size-larger,
+    $default-line-height,
+    $font-weight-regular
+  );
+}
+
+// Black color with xxxl font size
+@mixin text-black-xxxl() {
+  @include text-styles(
+    $color-black,
+    $text-size-xxxl,
+    $default-line-height,
+    $font-weight-regular
+  );
+}
+
+// Black color with thin font weight
+@mixin text-black-thin($font-size: $text-size-large) {
+  @include text-styles(
+    $color-black,
+    $font-size,
+    $default-line-height,
+    $font-weight-thin
+  );
+}
+
+// Black color with semi-bold font weight
+@mixin text-black-semi-bold($font-size: $text-size-large) {
+  @include text-styles(
+    $color-black,
+    $font-size,
+    $default-line-height,
+    $font-weight-semi-bold
+  );
+}
+
+// Black color with bold font weight
+@mixin text-black-bold($font-size: $text-size-large) {
+  @include text-styles(
+    $color-black,
+    $font-size,
+    $default-line-height,
+    $font-weight-bold
+  );
+}
+
+// White color with small font size
+@mixin text-white-small() {
+  @include text-styles(
+    $color-white,
+    $text-size-small,
+    $default-line-height,
+    $font-weight-regular
+  );
+}
+
+// White color with large font size
+@mixin text-white-large() {
+  @include text-styles(
+    $color-white,
+    $text-size-large,
+    $default-line-height,
+    $font-weight-regular
+  );
+}
+
+// White color with larger font size
+@mixin text-white-larger() {
+  @include text-styles(
+    $color-white,
+    $text-size-larger,
+    $default-line-height,
+    $font-weight-regular
+  );
+}
+
+// White color with xxxl font size
+@mixin text-white-xxxl() {
+  @include text-styles(
+    $color-white,
+    $text-size-xxxl,
+    $default-line-height,
+    $font-weight-regular
+  );
+}
+
+// White color with thin font weight
+@mixin text-white-thin($font-size: $text-size-large) {
+  @include text-styles(
+    $color-white,
+    $font-size,
+    $default-line-height,
+    $font-weight-thin
+  );
+}
+
+// White color with semi-bold font weight
+@mixin text-white-semi-bold($font-size: $text-size-large) {
+  @include text-styles(
+    $color-white,
+    $font-size,
+    $default-line-height,
+    $font-weight-semi-bold
+  );
+}
+
+// White color with bold font weight
+@mixin text-white-bold($font-size: $text-size-large) {
+  @include text-styles(
+    $color-white,
+    $font-size,
+    $default-line-height,
+    $font-weight-bold
+  );
+}
+
+// Black color with small font size
+@mixin text-grey-small() {
+  @include text-styles(
+    $color-grey,
+    $text-size-small,
+    $default-line-height,
+    $font-weight-regular
+  );
+}
+
+// Black color with large font size
+@mixin text-grey-large() {
+  @include text-styles(
+    $color-grey,
+    $text-size-large,
+    $default-line-height,
+    $font-weight-regular
+  );
+}
+
+// Black color with larger font size
+@mixin text-grey-larger() {
+  @include text-styles(
+    $color-grey,
+    $text-size-larger,
+    $default-line-height,
+    $font-weight-regular
+  );
+}
+
+// Black color with xxxl font size
+@mixin text-grey-xxxl() {
+  @include text-styles(
+    $color-grey,
+    $text-size-xxxl,
+    $default-line-height,
+    $font-weight-regular
+  );
+}
+
+// Black color with thin font weight
+@mixin text-grey-thin($font-size: $text-size-large) {
+  @include text-styles(
+    $color-grey,
+    $font-size,
+    $default-line-height,
+    $font-weight-thin
+  );
+}
+
+// Black color with semi-bold font weight
+@mixin text-grey-semi-bold($font-size: $text-size-large) {
+  @include text-styles(
+    $color-grey,
+    $font-size,
+    $default-line-height,
+    $font-weight-semi-bold
+  );
+}
+
+// Black color with bold font weight
+@mixin text-grey-bold($font-size: $text-size-large) {
+  @include text-styles(
+    $color-grey,
+    $font-size,
+    $default-line-height,
+    $font-weight-bold
+  );
+}
+
+// Border Mixins
+@mixin border($borderColor: $border-color, $width: 1px, $important: false) {
+  border: $width solid $borderColor;
+  @if $important {
+    border: $width solid $borderColor !important;
+  }
+}
+
+@mixin border-bottom($borderColor: $border-color, $width: 1px) {
+  border-bottom: $width solid $borderColor;
+}
+
+@mixin border-top($borderColor: $border-color, $width: 1px) {
+  border-top: $width solid $borderColor;
+}
+
+@mixin border-right($borderColor: $border-color, $width: 1px) {
+  border-right: $width solid $borderColor;
+}
+
+@mixin border-left($borderColor: $border-color, $width: 1px) {
+  border-left: $width solid $borderColor;
+}
+// Position Mixins
+
+@mixin position($top: 0, $bottom: auto, $left: 0, $right: 0) {
+  position: absolute;
+  top: $top;
+  bottom: $bottom;
+  right: $right;
+  left: $left;
+}
+
+@mixin position-top() {
+  position: absolute;
+  top: 0;
+  bottom: auto;
+  right: 0;
+  left: 0;
+}
+
+@mixin position-bottom() {
+  position: absolute;
+  top: auto;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+@mixin position-right() {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: auto;
+}
+
+@mixin position-left() {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: auto;
+  left: 0;
+}
+
+// Flexbox Mixins
+@mixin flex() {
+  display: flex;
+}
+
+@mixin large-box-shadow() {
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 0 10px $box-shadow-color;;
+}
+
+
+@mixin box-shadow() {
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 0 6px $box-shadow-color;;
+}
+
+@mixin flex-center() {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-end() {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+@mixin flex-align-item-center() {
+  display: flex;
+  align-items: center;
+}
+@mixin flex-justify-center() {
+  display: flex;
+  justify-content: center;
+}
+
+@mixin flex-justify-start() {
+  display: flex;
+  justify-content: flex-start;
+}
+
+@mixin flex-justify-end() {
+  display: flex;
+  justify-content: flex-end;
+}
+
+@mixin flex-justify-space-between() {
+  display: flex;
+  justify-content: space-between;
+}
+
+@mixin flex-align-center() {
+  display: flex;
+  align-items: center;
+}
+
+@mixin flex-align-end() {
+  display: flex;
+  align-items: flex-end;
+}
+
+@mixin flex-justify-space-around() {
+  display: flex;
+  justify-content: space-around;
+}
+
+// mixin for the slide-in-from-top animation
+@mixin slide-in-from-top($duration: 0.35s, $easing: ease-out) {
+  animation: slide-in-from-top $duration $easing;
+ 
+  @keyframes slide-in-from-top {
+    0% {
+      transform: translateY(-15%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+}

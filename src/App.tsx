@@ -5,7 +5,7 @@ import '@styles/main.scss';
 const App: React.FC = () => {
   return (
     <div>
-      <Button title='Hello' />
+      <Button />
     </div>
   )
 }

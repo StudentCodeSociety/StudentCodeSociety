@@ -1,28 +1,104 @@
-// Font Families
-$font-primary: 'Montserrat', sans-serif;
+// styles/globals.scss
+// Define text color options
+// Base Colors
+$color-primary: #fdcc09;
+$color-secondary: #5ec7c0;
+$color-tertiary: #be2747;
+$color-black: #000000;
+$color-white: #ffffff;
+$color-grey: #777;
+$color-error: #dc3545;
+$gray-filter: invert(73%) sepia(0%) saturate(0%) hue-rotate(0deg)
+  brightness(70%) contrast(95%);
+$color-quaternary: #71a513;
+$color-background: #f9f9f9;
+$color-grey-transparent: rgba(119, 115, 115, 0.684);
 
-// Font Sizes
-$font-size-small: 12px;
-$font-size-base: 16px;
-$font-size-medium: 18px;
-$font-size-large: 24px;
-$font-size-xlarge: 32px;
+// Box-shadow Colors
+$box-shadow-color: #707070;
 
-// Font Weights
-$font-weight-light: 300;
-$font-weight-normal: 400;
-$font-weight-medium: 500;
-$font-weight-bold: 700;
+// Border Colors
+$border-color: #b9b9b9;
+$border-focus-color: $color-primary;
+$border-disabled-color: #e7e7e7;
 
-// Spacing (Padding/Margin)
-$spacing-xs: 4px;
-$spacing-sm: 8px;
-$spacing-md: 16px;
-$spacing-lg: 24px;
-$spacing-xl: 32px;
+// Input Colors
+$input-background-color: $color-white;
+$input-disabled-background-color: #e7e7e7;
 
-// Colors (Optional, but often useful in common variables)
-$color-primary: #007bff;
-$color-secondary: #6c757d;
-$color-light: #f8f9fa;
-$color-dark: #343a40;
+// table Colors
+$table-background-color: $color-white;
+$table-pagination-button-color: $color-white;
+$table-pagination-button-disabled-color: $color-background;
+$table-pagination-button-hover-color: Darker(
+  $table-pagination-button-color,
+  30%
+);
+
+// Define breakpoints
+$breakpoint-mobile: 767px;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;
+
+// Define text size options
+$text-size-very-small: 12px;
+$text-size-small: 14px;
+$text-size-large: 16px;
+$text-size-xl: 18px;
+$text-size-larger: 24px;
+$text-size-xxl: 32px;
+$text-size-xxxl: 60px;
+
+// Define font weights
+$font-weight-thin: 200;
+$font-weight-regular: 400;
+$font-weight-bold: 600;
+$font-weight-semi-bold: 500;
+
+// Default line-height
+$default-line-height: 1.2;
+
+// Font Sizes for Buttons
+$button-font-size-base: 16px;
+$button-font-size-small: 14px;
+$button-font-size-large: 18px;
+
+// Padding and Border Radius for Buttons
+$button-padding-base: 16px;
+$button-padding-small: 8px 12px;
+$button-padding-large: 12px 24px;
+$button-border-radius-base: 30px;
+
+// Border Radius
+$border-radius-xssmall: 2px;
+$border-radius-xsmall: 4px;
+$border-radius-xmedium: 6px;
+$border-radius-medium: 10px;
+$border-radius-large: 20px;
+$border-radius-larger: 26px;
+
+// Spacing Variables
+$spacing-xsmall: 4px;
+$spacing-small: 8px;
+$spacing-medium: 10px;
+$spacing-base: 20px;
+$spacing-large: 24px;
+$spacing-xlarge: 32px;
+$spacing-medium-large: 16px;
+
+// padding Variables
+$padding-xsmall: 4px;
+$padding-small: 8px;
+$padding-medium: 10px;
+$padding-base: 20px;
+$padding-large: 24px;
+$padding-xlarge: 32px;
+$padding-medium-large: 16px;
+// margin Variables
+$margin-xsmall: 4px;
+$margin-small: 8px;
+$margin-medium: 10px;
+$margin-base: 20px;
+$margin-large: 24px;
+$margin-xlarge: 32px;
+$margin-medium-large: 16px;

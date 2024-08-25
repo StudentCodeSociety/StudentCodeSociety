@@ -1,8 +1,9 @@
 import React from 'react';
 import styles from '@components/UI/Button/Button.module.scss';
+import { textConstants } from '@src/constants/textConstant';
 
 interface ButtonProps {
-  title: string;
+  title?: string;
   variant?: 'primary' | 'secondary';
   size?: 'small' | 'medium' | 'large';
   onClick?: () => void;
@@ -11,14 +12,14 @@ interface ButtonProps {
 }
 
 const Button: React.FC<ButtonProps> = ({
-  title,
+  title = textConstants.buttonDefaultTitle,
   variant = 'primary',
   size = 'medium',
   onClick,
   customClass,
   isLoading = false,
 }) => {
-  const classes = `${styles.button} ${styles[variant]} ${styles[size]} ${isLoading ? styles.loading : ''} ${customClass}`;
+  const classes = `${styles.button} ${styles[`button--${variant}`]} ${styles[`button--${size}`]} ${isLoading ? styles['button--loading'] : ''} ${customClass}`;
 
   return (
     <button className={classes} onClick={onClick} disabled={isLoading}>
