@@ -1,0 +1,17 @@
+@import '@styles/variables';
+
+.descriptionContainer {
+  background-color: $color-white;
+  border: 1px solid $border-color;
+  border-radius: $border-radius-medium;
+  padding: $padding-base;
+  box-shadow: 0 2px 5px rgba($box-shadow-color, 0.1);
+  max-width: 600px;
+  margin: $margin-base auto;
+}
+
+.description {
+  font-size: $text-size-large;
+  color: $color-grey;
+  margin: 0;
+}

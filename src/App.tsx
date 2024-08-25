@@ -3,6 +3,8 @@ import { Button } from '@components/UI/Button'
 import { Card } from '@components/Cards';
 import '@styles/main.scss';
 import { Input } from '@components/UI/Input';
+import { Heading } from '@components/Heading';
+import { Description } from '@components/Description';
 
 const App: React.FC = () => {
   return (
@@ -22,6 +24,10 @@ const App: React.FC = () => {
         isLoading={true}
       />
       <Input type='text' />
+      <Heading level={1}>Hello</Heading>
+      <Description
+        description="This is a simple description component that displays text without any additional styling."
+      />
     </div>
   )
 }

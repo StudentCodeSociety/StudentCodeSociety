@@ -1,48 +1,51 @@
+// src/components/Cards/Card.module.scss
+
+@import '@styles/globals';
+
 .card {
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    max-width: 400px;
-    background-color: #fff;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    padding: 16px;
-  }
-  
-  .imageContainer {
-    width: 100%;
-    height: 200px;
-    overflow: hidden;
-    border-radius: 8px;
-  }
-  
-  .image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  
-  .content {
-    flex: 1;
-  }
-  
-  .title {
-    margin: 0;
-    font-size: 1.5rem;
-    color: #333;
-  }
-  
-  .description {
-    margin: 8px 0;
-    font-size: 1rem;
-    color: #666;
-  }
-  
-  .buttons {
-    display: flex;
-    gap: 8px;
-    justify-content: flex-start;
-  }
-  
+  border: 1px solid $border-color;
+  border-radius: $border-radius-medium;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba($box-shadow-color, 0.1);
+  max-width: 400px;
+  background-color: $color-white;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-base;
+  padding: $padding-base;
+}
+
+.imageContainer {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  border-radius: $border-radius-medium;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.content {
+  flex: 1;
+}
+
+.title {
+  margin: 0;
+  font-size: $text-size-larger;
+  color: $color-black;
+}
+
+.description {
+  margin: $margin-small 0;
+  font-size: $text-size-large;
+  color: $color-grey;
+}
+
+.buttons {
+  display: flex;
+  gap: $spacing-small;
+  justify-content: flex-start;
+}

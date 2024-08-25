@@ -1,0 +1,41 @@
+@import '@styles/variables';
+
+.heading {
+    color: $color-black;
+
+    &--primary {
+        font-size: $text-size-xxl;
+        font-weight: $font-weight-bold;
+    }
+
+    &--secondary {
+        font-size: $text-size-xl;
+        font-weight: $font-weight-semi-bold;
+    }
+
+    &--tertiary {
+        font-size: $text-size-large;
+        font-weight: $font-weight-regular;
+    }
+
+    &--small {
+        font-size: $text-size-small;
+        font-weight: $font-weight-regular;
+    }
+
+    &--center {
+        text-align: center;
+    }
+
+    &--left {
+        text-align: left;
+    }
+
+    &--right {
+        text-align: right;
+    }
+
+    &--uppercase {
+        text-transform: uppercase;
+    }
+}

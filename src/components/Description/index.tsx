@@ -1,0 +1,1 @@
+export {default as Description} from '@components/Description/Description';
