@@ -1,11 +1,11 @@
 import React from 'react'
-import Button from '@components/UI/Button/Button'
+import { Button } from '@components/UI/Button'
 import './styles/main.scss';
 
-const App:React.FC = () => {
+const App: React.FC = () => {
   return (
     <div>
-      <Button  />
+      <Button title='Hello' />
     </div>
   )
 }

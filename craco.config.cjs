@@ -4,7 +4,8 @@ module.exports = {
   webpack: {
     alias: {
       '@src': path.resolve(__dirname, 'src'),
-      '@components': path.resolve(__dirname, 'src/components')
+      '@components': path.resolve(__dirname, 'src/components'),
+      '@assets': path.resolve(__dirname, 'src/assets'),
     }
   },
   dotenv: {
