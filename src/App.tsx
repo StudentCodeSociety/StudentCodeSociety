@@ -2,6 +2,7 @@ import React from 'react'
 import { Button } from '@components/UI/Button'
 import { Card } from '@components/Cards';
 import '@styles/main.scss';
+import { Input } from '@components/UI/Input';
 
 const App: React.FC = () => {
   return (
@@ -20,6 +21,7 @@ const App: React.FC = () => {
         buttonLabels={["Get Started", "Documentation"]}
         isLoading={true}
       />
+      <Input type='text' />
     </div>
   )
 }

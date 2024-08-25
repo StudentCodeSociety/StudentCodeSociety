@@ -1,0 +1,70 @@
+@import '@styles/variables';
+
+.input {
+  padding: $padding-medium;
+  font-size: $text-size-small;
+  border: 1px solid $border-color;
+  border-radius: $border-radius-xsmall;
+  background-color: $input-background-color;
+  transition: border-color 0.3s, background-color 0.3s;
+
+  &:focus {
+    border-color: $border-focus-color;
+    background-color: $input-background-color;
+  }
+
+  &--primary {
+    border-color: $color-primary;
+  }
+
+  &--secondary {
+    border-color: $color-secondary;
+  }
+
+  &--small {
+    padding: $padding-small;
+    font-size: $text-size-very-small;
+  }
+
+  &--medium {
+    padding: $padding-medium;
+    font-size: $text-size-small;
+  }
+
+  &--large {
+    padding: $padding-large;
+    font-size: $text-size-large;
+  }
+
+  &--disabled {
+    background-color: $input-disabled-background-color;
+    border-color: $border-disabled-color;
+    pointer-events: none;
+    opacity: 0.6;
+  }
+}
+
+.label {
+  margin-bottom: $margin-small;
+  font-size: $text-size-small;
+  color: $color-grey;
+}
+
+.spinner {
+  border: 2px solid transparent;
+  border-radius: 50%;
+  border-top: 2px solid $color-grey;
+  width: 12px;
+  height: 12px;
+  margin-right: $spacing-small;
+  animation: spin 0.8s linear infinite;
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
